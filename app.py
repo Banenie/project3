@@ -55,6 +55,18 @@ def get_rain_prob(location_key: int | str) -> dict:
     return {'RainProbability': rain_prob}
 
 
+# проверяет погоду на пригодность для поездки
+def check_weather(temp: int, wind_speed: int, rain_prob: int):
+    if 0 <= temp <= 20 and 0 <= wind_speed <= 20 and 0 <= rain_prob <= 20:
+        return 'Погода блеск, катись куда хочешь!'
+    
+    elif abs(temp) > 70 or wind_speed < 0 or wind_speed > 100 or rain_prob < 0 or rain_prob > 100:
+        return 'Кажется, наступил апокалипсис...'
+    
+    else:
+        return 'Тебе следует остаться дома'
+
+
 def main():
     # location_key = get_location_key(10, 10)
     location_key = '252183'
@@ -63,9 +75,11 @@ def main():
     # сохраняем данные для экономии запросов
     with open('weather_data.json', 'w+') as file:
         json.dump(data, file)
+    
+    print(check_weather(data['Temperature'], data['WindSpeed'], data['RainProbability']))
 
 
-# запуск кода
+# запуск программы
 if __name__ == '__main__':
     main()
     app.run(debug=True)
