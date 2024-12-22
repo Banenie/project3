@@ -1,2 +1,2 @@
-# API_KEY = 'CwHqQFuSx1Lq0TpZTABOz9AlYY6lnNSj'
-API_KEY = 'ociL61Z2AGLzPR4lmXzoQyjzquBsHSkv'
+API_KEY = 'nx4vdA7JHfjegtML1hCJSKRn8R9L36rW'
+# API_KEY = 'ociL61Z2AGLzPR4lmXzoQyjzquBsHSkv'
